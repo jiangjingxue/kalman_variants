@@ -1,5 +1,5 @@
 
-# kalman_variants - a selective set of variants of nonlinear Kalman Filter
+# kalman_variants - a selective set of nonlinear Kalman Filter Variants
 **Maintainer Status: Actively maintained**
 
 <img src="./doc/ekf.gif" width="360" height="270" style="border-radius: 10px box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);">
