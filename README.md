@@ -12,7 +12,7 @@ At the moment, this package implements
 * Error State Extended Kalman Filter (ESEKF) 
 * Unscented Kalman Filter (UKF)
 
-And the following vehicle motion model in both discrete and continuous formulations
+Moreover, it implements the following vehicle motion model in both discrete and continuous formulations
 * Kinematic Bicycle Model  
 * Kinematic Differential Drive Model 
 * Kinematic Ackermann Model
