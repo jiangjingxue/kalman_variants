@@ -5,7 +5,7 @@
 <img src="./doc/ekf.gif" width="360" height="270" style="border-radius: 10px box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);">
 
 ## Summary
-`kalman_variants` implements several Kalman filter nonlinear variants with a goal for educational purpose. This package targets state estimation applications for robot and autonomous systems and includes detailed annotated code. You will also have free access to a entry-friendly kalman filter book at https://github.com/jiangjingxue/kalman_filter_variants/doc/ to go along with the annotated code to accelerate your learning. 
+`kalman_variants` implements several Kalman filter nonlinear variants with robtics applications in mind. This package specifically targets state estimation applications for robot and autonomous systems and includes detailed annotated code for every implementation of the kalman filter. You will also have free access to a entry-friendly kalman filter book at https://github.com/jiangjingxue/kalman_filter_variants/doc/ to go along with the annotated code to accelerate your learning. 
 <br/> <br/>
 At the moment, the package implements 
 * Extended Kalman Filter (EKF)
