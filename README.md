@@ -8,6 +8,7 @@ At the moment, the package implements
 * Extended Kalman Filter (EKF)
 * Error State Extended Kalman Filter (ESEKF) 
 * Unscented Kalman Filter (UKF)
+
 And the following vehicle motion model
 * Kinematic Bicycle Model  
 * Kinematic Differential Drive Model 
