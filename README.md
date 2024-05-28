@@ -1,5 +1,6 @@
 # kalman_variants - a selective set of variants of nonlinear Kalman Filter
 **Author**: Jingxue Jiang
+
 **Maintainer Status**: actively maintained
 
 ## Summary
