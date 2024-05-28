@@ -17,6 +17,17 @@ And the following vehicle motion model in both discrete and continuous formulati
 * Kinematic Ackermann Model
 * Dynamic Bicycle Model
 
+## Installation
+Download the source via git clone 
+````
+cd <your directory>
+git clone http://github.com/rlabbe/filterpy
+python setup.py install
+````
+## Basic Use
+
+
+
   
 
 
