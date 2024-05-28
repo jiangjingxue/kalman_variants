@@ -21,7 +21,7 @@ And the following vehicle motion model in both discrete and continuous formulati
 Download the source via git clone 
 ````
 cd <your directory>
-git clone http://github.com/rlabbe/filterpy
+git clone https://github.com/jiangjingxue/kalman_filter_variants.git
 python setup.py install
 ````
 ## Basic Use
