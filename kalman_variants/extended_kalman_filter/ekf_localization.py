@@ -52,5 +52,4 @@ class EKFLocalization():
     # def correction(self):
 
 if __name__ == "__main__":
-    n = AdditiveNoise(2)
-    print(n.zero_mean_gaussian())
+    
