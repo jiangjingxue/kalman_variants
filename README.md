@@ -26,6 +26,13 @@ Moreover, it implements the following vehicle motion model in both discrete and 
 * Kinematic Ackermann Model
 * Dynamic Bicycle Model
 
+## Status 
+<ul style="list-style-type:none;">
+  <li>Maintainer Status: Active</li>
+  <li>Maintainer(s): Jingxue Jiang</li>
+  <li>Author(s): Jingxue Jiang</li>
+</ul>
+
 ## Installation
 Download the source via git clone 
 ````
