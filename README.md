@@ -25,6 +25,18 @@ git clone https://github.com/jiangjingxue/kalman_filter_variants.git
 python setup.py install
 ````
 ## Basic Use
+First, import the filters and helper functions.
+````python
+import numpy as np
+from kalman_variants.ekf import EKFLocalization
+from kalman_variants.common import AddictdeNoise
+````
+Create the filter 
+````python
+my_ekf = EKFLocalization()
+````
+
+
 
 
 
