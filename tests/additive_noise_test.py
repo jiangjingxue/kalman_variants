@@ -1,5 +1,5 @@
 import numpy as np
-from kalman_variants.common.noise import AdditiveNoise
+from kalman_variants.common.additive_noise import AdditiveNoise
 
 def add_gaussian_noise():
     noise = AdditiveNoise(3)
