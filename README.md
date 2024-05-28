@@ -13,6 +13,8 @@ And the following vehicle motion model in both discrete and continuous formulati
 * Kinematic Bicycle Model  
 * Kinematic Differential Drive Model 
 * Kinematic Ackermann Model
-* Dynamic Bicycle Model   
+* Dynamic Bicycle Model
+
+  
 
 
