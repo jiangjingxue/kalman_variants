@@ -1,4 +1,4 @@
-# kalman_variants - a selective set of variants of Nonlinear Kalman Filter
+# kalman_variants - a selective set of variants of nonlinear Kalman Filter
 
 
 ## Summary
