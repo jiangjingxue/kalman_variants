@@ -13,7 +13,9 @@
 </table>
 
 **Author: Jingxue Jiang**
+
 **Maintainer: Jingxue Jiang**
+
 **Maintainer Status: Actively maintained**
 ## Package Summary
 `kalman_variants` implements several Kalman filter nonlinear variants with state estimation applications for robot and autonomous systems in mind. The package includes detailed line-by-line annotated code for every implementation of the kalman filter variant. You will also have free access to an implementation guide at [Kalman_filter_variants/doc/Kalman_Implementation_Guide_For_Dummies.pdf](https://github.com/jiangjingxue/Kalman_filter_variants/blob/18eac9ea2c95a9e930855d244a0914131d351721/doc/Kalman_Implementation_Guide_For_Dummies.pdf) to go along with the code to accelerate your learning. 
