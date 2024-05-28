@@ -52,5 +52,23 @@ Create the filter
 my_ekf = EKFLocalization()
 ````
 
+## Debug
+if you encounter following issue when importing the package
+```python
+ModuleNotFoundError: No module named 'kalman_variants'
+```
+Set `PYTHONPATH` environment variable in root project directory (Unix)
+```
+export PYTHONPATH=.
+```
+For Windows, use 
+```
+set PYTHONPATH=.
+```
+
+
+
+
+
 
 
