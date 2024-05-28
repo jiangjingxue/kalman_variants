@@ -1,3 +1,6 @@
+# kalman_filter_variants
+## A compact collection of Kalman filters variants
+=======
 # kalman_variants - a selective set of variants of nonlinear Kalman Filter
 **Author**: Jingxue Jiang
 
@@ -35,4 +38,6 @@ Create the filter
 ````python
 my_ekf = EKFLocalization()
 ````
+
+
 
