@@ -8,7 +8,7 @@
 `kalman_variants` implements several Kalman filter nonlinear variants with robtics applications in mind. This package specifically targets state estimation applications for robot and autonomous systems and includes detailed annotated code for every implementation of the kalman filter. You will also have free access to ahighly digestible kalman filter fundamentals book at https://github.com/jiangjingxue/kalman_filter_variants/doc/ to go along with the annotated code to accelerate your learning. 
 <br/> <br/>
 At the moment, this package implements 
-* Extended Kalman Filter (EKF) w/ landmark-localization example/tutorial
+* Extended Kalman Filter (EKF) w/ landmark-localization tutorial
 * Error State Extended Kalman Filter (ESEKF) 
 * Unscented Kalman Filter (UKF)
 
