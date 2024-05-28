@@ -4,10 +4,10 @@
 <table>
   <tr>
     <td>
-      <img src="./doc/ekf.gif" width="360" height="270" style="border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);">
+      <img src="./doc/ekf.gif" width="380" height="285" style="border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);">
     </td>
     <td>
-      <img src="./doc/noise.png" width="360" height="270" style="border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);">
+      <img src="./doc/noise.png" width="380" height="285" style="border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);">
     </td>
   </tr>
 </table>
