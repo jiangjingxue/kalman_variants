@@ -4,10 +4,9 @@ TODO: A detailed explanation of how this file work
 Author: Jingxue Jiang <jingxue07@gmail.com> 
 GitHub: https://github.com/jiangjingxue/kalman_filter_variants
 """
-from __future__ import absolute_import
-
 import numpy as np
 import matplotlib.pyplot as plt
+from kalman_variants.common import AdditiveNoise
 
 class EKFLocalization():
     def __init__(self,f_type:str):
@@ -47,4 +46,5 @@ class EKFLocalization():
     # def correction(self):
 
 if __name__ == "__main__":
-    n = noise.AdditiveNoise()
+    n = AdditiveNoise(2)
+    print(n.zero_mean_gaussian())

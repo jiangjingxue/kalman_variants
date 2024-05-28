@@ -1,6 +1,6 @@
 import numpy as np
 
-class AdditiveNoise:
+class AdditiveNoise(object):
     def __init__(self,dim):
         self.dim = dim 
 
@@ -12,16 +12,7 @@ class AdditiveNoise:
     def arbitrary_mean_gaussian(self, mean, std):
         gaussian_noise = np.random.normal(loc=mean, scale=std, size=self.dim)
         return gaussian_noise
+    
 
-def main():
-    noise = AdditiveNoise(2)
-    print("Zero-mean Gaussian noise:")
-    zero_mean_noise = noise.zero_mean_gaussian()
-    print(zero_mean_noise)
+    
 
-    print("Arbitrary-mean Gaussian noise with zero mean and std 2:")
-    arbitrary_mean_noise = noise.arbitrary_mean_gaussian(1,2)
-    print(arbitrary_mean_noise)  
-
-if __name__ == "__main__":
-    main()
