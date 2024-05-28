@@ -7,7 +7,7 @@
       <img src="./doc/ekf.gif" width="360" height="270" style="border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);">
     </td>
     <td>
-      <img src="./doc/book_front.png" width="360" height="270" style="border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);">
+      <img src="./doc/eq.png" width="360" height="270" style="border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);">
     </td>
   </tr>
 </table>
