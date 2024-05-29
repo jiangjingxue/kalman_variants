@@ -9,7 +9,11 @@ data: May 28, 2024
 import numpy as np
 
 class MotionModels(object):
-    def generalized(x,u):
+    def __init__(self):
+        self.model = None
+        self.L = 1.0 
+
+    def generalized(self,x,u):
         # state vector x = [x, y, θ]
         # control vector u = [v, ω]
         # 
@@ -24,13 +28,14 @@ class MotionModels(object):
         # A is a state-dependent matrix that encapsulates the system's nonlinearity  
         assert x.shape[0] == 3, "State vector must have 3 variables"
         assert u.shape[0] == 2, "Control parameter must have 2 variables"
+        self.model = "generalized"
 
         A = np.array([[np.cos(x[2,0]), 0],
                       [np.sin(x[2,0]), 0], 
                       [0, 1]])
         return A @ u 
     
-    def differential_drive(x,u,L):
+    def differential_drive(self,x,u):
         # state vector x = [x, y, θ]
         # control vector u = [vl,vr], aka [left_wheel_vel,right_wheel_vel]
         # wheelbase L is a constant
@@ -47,13 +52,14 @@ class MotionModels(object):
         # A is a state-dependent matrix that encapsulates the system's nonlinearity  
         assert x.shape[0] == 3, "State vector must have 3 variables"
         assert u.shape[0] == 2, "Control parameter must have 2 variables"
+        self.model = "differential"
 
         A = np.array([[0.5 * np.cos(x[2,0]), 0.5 * np.cos(x[2,0])],
                       [0.5 * np.sin(x[2,0]), 0.5 * np.sin(x[2,0])], 
-                      [-1 / L, 1 / L]])
+                      [-1 / self.L, 1 / self.L]])
         return A @ u 
     
-    def bicycle(x,u,L):
+    def bicycle(self,x,u):
         # state vector x = [x, y, θ, v]
         # control vector u = [a, φ], aka [acceleration, steering angle]
         # wheelbase L is a constant
@@ -66,15 +72,10 @@ class MotionModels(object):
         # v'(t) = a(t) 
         assert x.shape[0] == 4, "State vector must have 3 variables"
         assert u.shape[0] == 2, "Control parameter must have 2 variables"
+        self.model = "bicycle"
 
         return np.array([[x[3,0] * np.cos(x[2,0])], 
                          [x[3,0] * np.sin(x[2,0])], 
-                         [x[3,0] * np.tan(u[1,0]) / L],
+                         [x[3,0] * np.tan(u[1,0]) / self.L],
                          [u[0,0]]]) 
-
-
-
-
-
-
-        
+    
