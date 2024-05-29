@@ -6,6 +6,7 @@ GitHub: https://github.com/jiangjingxue/kalman_filter_variants
 """
 import numpy as np
 import matplotlib.pyplot as plt
+from kalman_variants.motion_models import MotionModels
 
 class EKFLocalization():
     def __init__(self,f_type:str, n_type:str):
@@ -44,8 +45,9 @@ class EKFLocalization():
 
 
     def prediction(self, u): 
-        w = AdditiveNoise(self.n).zero_mean_gaussian
-        self.x_hat = self.f(self.x_hat,u) + w 
+        # w = AdditiveNoise(self.n).zero_mean_gaussian
+        # self.x_hat = self.f(self.x_hat,u) + w 
+        pass 
 
 
     # def correction(self):
@@ -78,7 +80,6 @@ def main():
     vehicle_model = "differential"
     noise_type = "additive"
     EKFLocalization(f_type=vehicle_model,n_type=noise_type)
-
 
 if __name__ == "__main__":
     main()
