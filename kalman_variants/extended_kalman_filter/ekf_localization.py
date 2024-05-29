@@ -6,7 +6,7 @@ GitHub: https://github.com/jiangjingxue/kalman_filter_variants
 """
 import numpy as np
 import matplotlib.pyplot as plt
-from kalman_variants.common import AdditiveNoise
+from kalman_variants.motion_models import MotionModels
 
 class EKFLocalization():
     def __init__(self,f_type:str, n_type:str):
@@ -45,12 +45,42 @@ class EKFLocalization():
 
 
     def prediction(self, u): 
-        w = AdditiveNoise(self.n).zero_mean_gaussian
-        self.x_hat = self.f(self.x_hat,u) + w 
+        # w = AdditiveNoise(self.n).zero_mean_gaussian
+        # self.x_hat = self.f(self.x_hat,u) + w 
+        pass 
 
 
     # def correction(self):
 
+
+
+def main():
+    '''
+    Allowed actions for users
+    -------------------------
+    - should select a specific vehicle model. Available models: differential, ackermann 
+        -> 
+    - should provide a initial state estimate and a initial state covariance 
+    - should provide the 2 of the 4 noise covariances, namely the process noise 
+    covariance Q and the measurement noise covariance R
+
+    Disallowed actions for users
+    ----------------------------
+    - User don't get to set the motion model 
+        -> Only few vehicle motion model used in practice, hide this detail
+        -> 
+    The size of the noise covariances is constrained by the size of the state vector 
+    and measurement vector, which is subsequently constrained by specific vehicle type as
+    well as the sensor model. So probably a good idea to not let the user to set a 
+    arbitrary-sized noise covariances. 
+    - User dont
+
+    '''
+
+    vehicle_model = "differential"
+    noise_type = "additive"
+    EKFLocalization(f_type=vehicle_model,n_type=noise_type)
+
 if __name__ == "__main__":
-    n = AdditiveNoise(2)
-    print(n.zero_mean_gaussian())
+    main()
+    
