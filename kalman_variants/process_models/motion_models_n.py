@@ -13,23 +13,24 @@ import numpy as np
 
 class MotionModelsN:
     def __init__(self):
-        self.simple_car = self.Model('simple_car', self.__simple_car, self.__J_simple_car, 3, 2)
-        self.differential_drive = self.Model('differential_drive', self.__differential_drive, self.__J_differential_drive, 3, 2)
-        self.bicycle = self.Model('bicycle', self.__bicycle, self.__J_bicycle, 4, 2)
-        self.ackermann = self.Model('ackermann', self.__ackermann, self.__J_ackermann, 4, 2)
+        self.simple_car = self.Model('simple_car', self._simple_car, self._J_simple_car, 3, 2)
+        self.differential_drive = self.Model('differential_drive', self._differential_drive, self._J_differential_drive, 3, 2)
+        self.bicycle = self.Model('bicycle', self._bicycle, self._J_bicycle, 4, 2)
+        self.ackermann = self.Model('ackermann', self._ackermann, self._J_ackermann, 4, 2)
 
         # default wheelbase
         self.L = 1.0
         
     class Model:
-        def __init__(self, name, f, Jf, X_dim, u_dim):
+        def __init__(self, name, g, Jf, X_dim, u_dim):
             self.name = name
-            self.f = f
-            self.Jf = Jf
+            self.g = g                  # continuous-time kinematic model  
+            self.f = None               # state transition matrix (discrete-time)
+            self.Jf = Jf                # Jacobian of the state transition matrix
             self.X_dim = X_dim
             self.u_dim = u_dim
             
-    def __simple_car(self,X,u):
+    def _simple_car(self,X,u):
         # Generalized kinematic vehicle model
         # state vector x = [x, y, θ]
         # control vector u = [v, ω]
@@ -51,10 +52,10 @@ class MotionModelsN:
                       [0, 1]])
         return A @ u 
     
-    def __J_simple_car(self,X,u):
+    def _J_simple_car(self,X,u):
         return np.eye(3)
 
-    def __differential_drive(self,X,u): 
+    def _differential_drive(self,X,u): 
         # state vector x = [x, y, θ]
         # control vector u = [vl,vr], aka [left_wheel_vel,right_wheel_vel]
         # wheelbase L is a constant
@@ -77,10 +78,10 @@ class MotionModelsN:
                       [-1 / self.L, 1 / self.L]])
         return A @ u 
     
-    def __J_differential_drive(self,X,u):
+    def _J_differential_drive(self,X,u):
         raise NotImplementedError("the Jacobian for this motion model is not implemented yet")
     
-    def __bicycle(self,X,u):
+    def _bicycle(self,X,u):
         # state vector x = [x, y, θ, v]
         # control vector u = [a, φ], aka [acceleration, steering angle]
         # wheelbase L is a constant
@@ -99,11 +100,11 @@ class MotionModelsN:
                          [X[3,0] * np.tan(u[1,0]) / self.L],
                          [u[0,0]]]) 
     
-    def __J_bicycle(self,X,u):
+    def _J_bicycle(self,X,u):
         raise NotImplementedError("the Jacobian for this motion model is not implemented yet")
     
-    def __ackermann(self,X,u):
+    def _ackermann(self,X,u):
         raise NotImplementedError("this motion model is not implemented yet")
     
-    def __J_ackermann(self,X,u):
+    def _J_ackermann(self,X,u):
         raise NotImplementedError("the Jacobian for this motion model is not implemented yet")
