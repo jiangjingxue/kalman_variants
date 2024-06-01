@@ -25,9 +25,7 @@ def main():
     sys['X'] =  np.array([[1], [1], [np.pi]])
     sys['P'] = 0.1 * np.eye(3)
 
-    print(motion_model.name)
     ekf = EKF(sys,motion_model,measurement_model)
-
 
 if __name__ == "__main__":
     main()
