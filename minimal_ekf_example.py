@@ -1,7 +1,7 @@
 """
 A minimal example
 Author: Jingxue Jiang <jingxue07@gmail.com> 
-GitHub: https://github.com/jiangjingxue/kalman_filter_variants
+GitHub: https://github.com/jiangjingxue/Kalman_filter_variants
 """
 import numpy as np
 from kalman_variants.process_models.motion_models_n import MotionModelsN
