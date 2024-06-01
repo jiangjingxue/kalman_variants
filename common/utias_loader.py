@@ -4,8 +4,7 @@ Author: Jingxue Jiang <jingxue07@gmail.com>
 Dataset: http://asrl.utias.utoronto.ca/datasets/mrclam/index.html 
 """
 import numpy as np
-import pandas as pd
-import os
+import pandas as pd 
 
 class UTIASDatasetLoader(object):
     '''
@@ -37,23 +36,24 @@ class UTIASDatasetLoader(object):
             self._cut_frames(last_frame)
 
         self._encode_replace()
-        # self._add_headers()
+        self._add_headers()
         
-        # df_barcodes = pd.DataFrame(self.barcodes)
-        # df_landmarks = pd.DataFrame(self.landmark_groundtruth)
-        # df_groundtruth = pd.DataFrame(self.robot_groundtruth)
-        # df_odom = pd.DataFrame(self.robot_odometry)
-        # df_measurement = pd.DataFrame(self.robot_measurement)
         # print("Barcodes:")
         # print(df_barcodes)
-        # print("Landmark groundtruth:")
-        # print(df_landmarks)
-        # print("Sampled groundtruth:")
-        # print(df_groundtruth)
-        # print("Sampled odom:")
-        # print(df_odom)
-        # print("Sampled measurement:")
-        # print(df_measurement)        
+        print()
+        print("Groundtruth (Landmarks):")
+        print(self.landmarks_true)
+        print()
+        print("Groundtruth (Robot):")
+        print(self.robot_true)
+        print()
+        print("Control Inputs:")
+        print(self.odometry)
+        print()
+        print("Measurements:")
+        print(self.measurements) 
+        print()
+       
 
     def _load(self):
         self.barcodes = np.genfromtxt(self.root_dir + "/Barcodes.dat")
@@ -222,13 +222,25 @@ class UTIASDatasetLoader(object):
         # replace the second columns in robot_measurement.dat
         self.robot_measurement[:, 1] = [key_value_map[int(x)] for x in self.robot_measurement[:, 1]]
 
-
     def _add_headers(self):
-        pass
- 
+        # add header for barcodes.dat
+        # barcodes = pd.DataFrame(self.barcodes, columns=['subject', 'barcode'], dtype=int)
 
-    
+        # add header for landmark_groundtruth.dat
+        self.landmarks_true = pd.DataFrame(self.landmark_groundtruth[:, [0, 1, 2]], columns=['subject', 'x', 'y'])
+        self.landmarks_true['subject'] = self.landmarks_true['subject'].astype(int)
 
+        # add header for robot_groundtruth
+        self.robot_true = pd.DataFrame(self.robot_groundtruth, columns=['t', 'x', 'y','orientation'])
+
+        # add header for odometry 
+        self.odometry = pd.DataFrame(self.robot_odometry, columns=['t', 'linear_vel', 'angular_vel'])
+
+        # add header for robot_measurement
+        self.measurements = pd.DataFrame(self.robot_measurement, columns=['t', 'subject', 'range','bearing'])
+        self.measurements['subject'] = self.measurements['subject'].astype(int)
+
+        
 
 
 if __name__ == "__main__":
